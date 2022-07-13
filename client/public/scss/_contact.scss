@@ -1,0 +1,9 @@
+.contact-form {
+  display: grid;
+  justify-content: center;
+  border-style: none;
+  background: black;
+  padding: 40px;
+  grid-template-columns: repeat(1, minmax(0px, 800px));
+  border: white solid 2px;
+}

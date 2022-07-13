@@ -1,0 +1,23 @@
+.about-info {
+  text-align: justify;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 35px;
+  align-self: center;
+}
+
+.info-div {
+  margin: 20px 0;
+  padding: 20px 50px;
+  text-align: left;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  border: white solid 2px;
+}
+
+.info-detail-div {
+  display: grid;
+  grid-template-columns: 75px auto;
+  margin: 10px 0;
+}

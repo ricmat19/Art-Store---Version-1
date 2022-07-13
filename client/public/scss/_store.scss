@@ -1,0 +1,78 @@
+.paginationButtons {
+  margin-bottom: 40px;
+  padding: 0px;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+  gap: 5px;
+}
+
+.paginationButtons a {
+  padding: 10px 0;
+  margin: 1px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.paginationButtons a:hover {
+  color: white;
+  background-color: rgb(44, 44, 44);
+}
+
+.paginationButtons li {
+  text-align: center;
+  display: grid;
+  background-color: black;
+  color: white;
+  border: white solid 2px;
+}
+
+.store-menu {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 350px));
+  gap: 30px;
+  position: relative;
+  margin: 0 10%;
+}
+
+.products-menu {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 350px));
+  gap: 30px;
+  margin: 50px 10%;
+}
+
+.products-item {
+  text-align: center;
+  height: 350px;
+  width: 350px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  border: white solid 2px;
+  background-color: rgb(44, 44, 44);
+}
+
+.products-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
+}
+
+.products-thumbnail {
+  border-style: none;
+  background: black;
+  max-height: 350px;
+  max-width: 350px;
+}
+
+.products-thumbnail-footer {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}

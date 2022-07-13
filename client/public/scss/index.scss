@@ -1,0 +1,438 @@
+body {
+  color: #000000;
+  font-family: "Rajdhani";
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+
+h3 {
+  text-align: justify;
+}
+
+hr {
+  margin: 15px 15%;
+  align-content: center;
+  justify-self: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+button {
+  padding: 5px 20px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  font-family: "Rajdhani";
+  cursor: pointer;
+}
+
+button a,
+button a:hover {
+  color: white;
+}
+
+textarea {
+  border-style: none;
+  padding: 5px;
+  outline: none;
+  resize: none;
+  font-family: "Rajdhani";
+}
+
+label {
+  display: grid;
+  align-content: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.title-margin {
+  margin: 30px 0;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.logo-first {
+  color: rgb(255, 0, 0);
+}
+
+.disclaimer-hr {
+  margin: 15px 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+input,
+select,
+.card-element {
+  border-style: none;
+  padding: 10px;
+  outline: none;
+  font-family: "Rajdhani";
+}
+
+.grid {
+  display: grid;
+}
+
+.active {
+  color: white;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-right {
+  justify-self: right;
+}
+
+.display-none {
+  display: none;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.top-margin {
+  margin: 10px 0;
+}
+
+.radio {
+  display: inline;
+}
+
+.radio-label {
+  display: inline;
+}
+
+.radio-div {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.main-body {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  animation: transitionIn 1000ms;
+  /* grid-template-rows: 70px 1fr 70px; */
+  grid-template-rows: 1fr 100px;
+}
+
+.ig-logo:hover {
+  background: linear-gradient(
+    #405de6,
+    #5b51d8,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.twitter-logo:hover {
+  background: #1da1f2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.youtube-logo:hover {
+  background: #ff0000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-div {
+  display: grid;
+  align-content: center;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+.big-image {
+  border-style: none;
+  background: black;
+  max-height: 500px;
+  max-width: 450px;
+  border: solid white 2px;
+}
+
+.image-thumbnail {
+  border-style: none;
+  background: black;
+  height: 100px;
+  width: 100px;
+  margin: 0 5px;
+  border: solid white 2px;
+}
+
+.image-title {
+  text-align: center;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.subtitle-div {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
+  margin-top: 50px;
+}
+
+.delete {
+  color: white;
+  text-align: left;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.two-column-div {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 5px 0;
+  gap: 10px;
+}
+
+.three-column-div {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  margin: 5px 0;
+  gap: 10px;
+}
+
+.plus-icon-div {
+  text-align: end;
+  margin-right: 10%;
+}
+
+.plus-icon {
+  border: white solid 2px;
+  padding: 10px 20px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.plus-icon:hover {
+  background-color: rgb(44, 44, 44);
+}
+
+.cover {
+  background-image: url("/images/allOut.jpg");
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 70px);
+  position: relative;
+}
+
+.intro-button {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  display: grid;
+  width: 100vw;
+}
+
+.down-arrow {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+  justify-self: center;
+}
+
+.name-input-div {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+}
+
+.item-qty-input {
+  width: 70px;
+}
+
+.total-price {
+  text-align: right;
+  padding: 0 10px;
+}
+
+.menu-image-div {
+  text-align: center;
+  height: 350px;
+  width: 350px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  border: white solid 2px;
+}
+
+.menu-item {
+  text-align: center;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.menu-image {
+  border-style: none;
+  background: black;
+  max-height: 350px;
+  max-width: 350px;
+}
+
+.item-details,
+// .profile-info,
+.admin-item-div,
+.image-div,
+.checkout-div,
+.shipping-div,
+.payment-div {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 550px));
+  background-color: black;
+}
+
+.item-details,
+// .profile-info,
+.image-div {
+  margin: 20px 10%;
+}
+
+.profile-info {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(450px, 550px));
+  background-color: black;
+}
+
+.admin-item-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.subject-line {
+  display: grid;
+  margin: 15px 0;
+}
+
+.subject-line input,
+.subject-line textarea {
+  font-size: 17px;
+}
+
+.quantity-div {
+  display: grid;
+  grid-template-columns: 75px auto;
+}
+
+.admin-products-button-div {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.profile-image-div,
+.admin-image-div {
+  display: grid;
+  align-content: center;
+}
+
+.admin-image-div {
+  padding: 30px;
+}
+
+@import "about";
+@import "cart-checkout";
+@import "contact";
+@import "footer";
+@import "form";
+@import "modal";
+@import "navbar";
+@import "store";

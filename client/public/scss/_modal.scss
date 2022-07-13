@@ -1,0 +1,77 @@
+.modal-bg {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+  cursor: pointer;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 3;
+}
+
+.modal-content {
+  display: grid;
+  background-color: black;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  min-width: 330px;
+}
+
+.disclaimer-content,
+.added-content {
+  border: white solid 2px;
+}
+
+.disclaimer-content {
+  width: 400px;
+}
+
+.header {
+  margin: 5px;
+}
+
+.forgot-input-div {
+  display: grid;
+  gap: 5px;
+}
+
+.sign-footer span {
+  padding: 5px;
+}
+
+.create-product-container,
+.update-product-container {
+  background-color: black;
+  border: white solid 2px;
+  width: 1000px;
+}
+
+.delete-product-container {
+  background-color: black;
+  border: white solid 2px;
+}
+
+.modal-link:hover {
+  color: white;
+}
+
+.modal-input-div {
+  display: grid;
+  margin: 5px 0;
+}
+
+.added-button {
+  width: 200px;
+}
