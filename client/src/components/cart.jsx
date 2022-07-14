@@ -12,20 +12,20 @@ const CartC = () => {
       try {
         const cartResponse = await IndexAPI.get(`/cart`);
 
-        for (let i = 0; i < cartResponse.data.data.cart.length; i++) {
-          if (cartResponse.data.data.cart[i].imagekey !== null) {
-            let imagesResponse = await IndexAPI.get(
-              `/images/${cartResponse.data.data.cart[i].imagekey}`,
-              {
-                responseType: "arraybuffer",
-              }
-            ).then((response) =>
-              Buffer.from(response.data, "binary").toString("base64")
-            );
+        // for (let i = 0; i < cartResponse.data.data.cart.length; i++) {
+        //   if (cartResponse.data.data.cart[i].imagekey !== null) {
+        //     let imagesResponse = await IndexAPI.get(
+        //       `/images/${cartResponse.data.data.cart[i].imagekey}`,
+        //       {
+        //         responseType: "arraybuffer",
+        //       }
+        //     ).then((response) =>
+        //       Buffer.from(response.data, "binary").toString("base64")
+        //     );
 
-            cartResponse.data.data.cart[i].imageBuffer = imagesResponse;
-          }
-        }
+        //     cartResponse.data.data.cart[i].imageBuffer = imagesResponse;
+        //   }
+        // }
         setCart(cartResponse.data.data.cart);
       } catch (err) {
         console.log(err);

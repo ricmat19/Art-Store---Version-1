@@ -42,7 +42,7 @@ const App = () => {
                 <span className="logo-first">H</span>ouse
               </span>
               &quot; is a full-stack E-commerce application built using
-              React.js, Node/Express, PostgreSQL, and an AWS S3 Bucket for image
+              React.js, Node/Express, PostgreSQL, and Cloudinary for image
               storage. This application is strictly for demonstrative purposes.
               <hr className="disclaimer-hr" />
               By clicking the button below, you are accepting that no real

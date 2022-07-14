@@ -8,7 +8,6 @@ import FooterC from "./footer";
 const ProductDetailsC = () => {
   const { product, id } = useParams();
   const [addedModal, setAddedModal] = useState("modal-bg");
-  const [imageBuffer, setImageBuffer] = useState("");
   const [, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState([]);
   const [cartQty, setCartQty] = useState(0);
@@ -33,18 +32,18 @@ const ProductDetailsC = () => {
           `/products/${product}/${id}`
         );
 
-        if (productResponse.data.data.item.imagekey !== null) {
-          let imagesResponse = await IndexAPI.get(
-            `/images/${productResponse.data.data.item.imagekey}`,
-            {
-              responseType: "arraybuffer",
-            }
-          ).then((response) =>
-            Buffer.from(response.data, "binary").toString("base64")
-          );
+        // if (productResponse.data.data.item.imagekey !== null) {
+        //   let imagesResponse = await IndexAPI.get(
+        //     `/images/${productResponse.data.data.item.imagekey}`,
+        //     {
+        //       responseType: "arraybuffer",
+        //     }
+        //   ).then((response) =>
+        //     Buffer.from(response.data, "binary").toString("base64")
+        //   );
 
-          setImageBuffer(`data:image/png;base64,${imagesResponse}`);
-        }
+        //   setImageBuffer(`data:image/png;base64,${imagesResponse}`);
+        // }
         setSelectedProduct(productResponse.data.data.item);
 
         const cartResponse = await IndexAPI.get(`/cart`);
@@ -79,7 +78,6 @@ const ProductDetailsC = () => {
 
   return (
     <div>
-
       {/* Added to Cart */}
       <div className={addedModal}>
         <form>
@@ -114,7 +112,7 @@ const ProductDetailsC = () => {
             <div className="justify-center">
               <img
                 className="big-image"
-                src={imageBuffer}
+                src={selectedProduct.imagekey}
                 alt="product image"
               />
             </div>

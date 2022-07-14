@@ -1,7 +1,6 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "lint": "eslint ./ --ext .js",
@@ -23,6 +22,7 @@
   "homepage": "https://github.com/ricmat19/Ecommerce#readme",
   "dependencies": {
     "aws-sdk": "^2.939.0",
+    "cloudinary": "^1.30.0",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
@@ -44,5 +44,6 @@
     "ansi-regex": "^6.0.1",
     "eslint": "^7.11.0",
     "nodemon": "^2.0.7"
-  }
+  },
+  "description": ""
 }

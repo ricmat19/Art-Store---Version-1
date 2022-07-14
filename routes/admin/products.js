@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../../db");
 
 //Get all products items
-router.get("/products", async (req, res) => {
+router.get("/admin/products", async (req, res) => {
   try {
     const products = await db.query("SELECT * FROM products");
 
@@ -25,6 +25,7 @@ router.get("/admin/products/:product", async (req, res) => {
     const product = await db.query("SELECT * FROM products WHERE PRODUCT=$1", [
       req.params.product,
     ]);
+    console.log(product)
     res.status(200).json({
       status: "success",
       results: product.rows.length,

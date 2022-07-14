@@ -11,6 +11,7 @@ import FooterC from "../footer";
 
 const AdminProductsC = () => {
   const { product } = useParams();
+  console.log(product)
   const [loginStatus, setLoginStatus] = useState(true);
   const [createProductModal, setCreateProductModal] = useState("modal-bg");
   const [updateItem, setUpdateItem] = useState("");
@@ -50,7 +51,7 @@ const AdminProductsC = () => {
             <div className="products-item">
               <img
                 className="products-thumbnail"
-                src={item.imageBuffer}
+                src={item.imagekey}
                 alt="Thumbnail"
               />
             </div>
@@ -114,26 +115,10 @@ const AdminProductsC = () => {
         });
 
         const productResponse = await IndexAPI.get(
-          `/admin/products/${product}`
+          `/admin/products`
         );
-
-        for (let i = 0; i < productResponse.data.data.product.length; i++) {
-          if (productResponse.data.data.product[i].imagekey !== null) {
-            let imagesResponse = await IndexAPI.get(
-              `/images/${productResponse.data.data.product[i].imagekey}`,
-              {
-                responseType: "arraybuffer",
-              }
-            ).then((response) =>
-              Buffer.from(response.data, "binary").toString("base64")
-            );
-
-            productResponse.data.data.product[
-              i
-            ].imageBuffer = `data:image/png;base64,${imagesResponse}`;
-          }
-        }
-        setProducts(productResponse.data.data.product);
+        console.log(productResponse);
+        setProducts(productResponse.data.data.products);
       } catch (err) {
         console.log(err);
       }
@@ -153,7 +138,9 @@ const AdminProductsC = () => {
         </div>
         <div className={updateProductModal}>
           <div ref={updateProductRef} className="update-product-container">
-            <AdminUpdateProductC updateItem={updateItem} />
+            <AdminUpdateProductC
+              updateItem={updateItem}
+            />
           </div>
         </div>
         <div className={deleteProductModal}>

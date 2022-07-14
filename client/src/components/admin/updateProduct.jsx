@@ -4,7 +4,7 @@ import IndexAPI from "../../apis/indexAPI";
 
 const AdminUpdateProductC = (props) => {
   const [setProducts] = useState([]);
-  const [image, setImage] = useState("");
+  const [image] = useState("");
   const [title, setTitle] = useState("");
   const [type, setType] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -24,18 +24,18 @@ const AdminUpdateProductC = (props) => {
           setInfo(response.data.data.item.info);
           setQuantity(response.data.data.item.qty);
 
-          if (response.data.data.item.imagekey !== null) {
-            let imagesResponse = await IndexAPI.get(
-              `/images/${response.data.data.item.imagekey}`,
-              {
-                responseType: "arraybuffer",
-              }
-            ).then((response) =>
-              Buffer.from(response.data, "binary").toString("base64")
-            );
+          // if (response.data.data.item.imagekey !== null) {
+          //   let imagesResponse = await IndexAPI.get(
+          //     `/images/${response.data.data.item.imagekey}`,
+          //     {
+          //       responseType: "arraybuffer",
+          //     }
+          //   ).then((response) =>
+          //     Buffer.from(response.data, "binary").toString("base64")
+          //   );
 
-            setImage(`data:image/png;base64,${imagesResponse}`);
-          }
+          //   setImage(`data:image/png;base64,${imagesResponse}`);
+          // }
 
           setProducts(response.data.data.item);
         }

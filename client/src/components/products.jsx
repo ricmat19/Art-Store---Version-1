@@ -12,6 +12,8 @@ const ProductsC = () => {
   const itemsPerPage = 9;
   const pagesVisted = pageNumber * itemsPerPage;
 
+  let history = useHistory();
+
   const displayItems = products
     .slice(pagesVisted, pagesVisted + itemsPerPage)
     .map((item) => {
@@ -22,7 +24,7 @@ const ProductsC = () => {
           onClick={() => displayItem(item.product, item.id)}
         >
           <div className="products-item">
-            <img className="products-thumbnail" src={item.imageBuffer} />
+            <img className="products-thumbnail" src={item.imagekey} />
           </div>
           <div className="products-thumbnail-footer">
             <h3 className="align-center">{item.title}</h3>
@@ -32,37 +34,13 @@ const ProductsC = () => {
       );
     });
 
-  const pageCount = Math.ceil(products.length / itemsPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
-
-  let history = useHistory();
-
   let productResponse;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        productResponse = await IndexAPI.get(`/products/print`);
-
-        for (let i = 0; i < productResponse.data.data.product.length; i++) {
-          if (productResponse.data.data.product[i].imagekey !== null) {
-            let imagesResponse = await IndexAPI.get(
-              `/images/${productResponse.data.data.product[i].imagekey}`,
-              {
-                responseType: "arraybuffer",
-              }
-            ).then((response) =>
-              Buffer.from(response.data, "binary").toString("base64")
-            );
-
-            productResponse.data.data.product[
-              i
-            ].imageBuffer = `data:image/png;base64,${imagesResponse}`;
-          }
-        }
-        setProducts(productResponse.data.data.product);
+        productResponse = await IndexAPI.get(`/products`);
+        console.log(productResponse);
+        setProducts(productResponse.data.data.products);
       } catch (err) {
         console.log(err);
       }
@@ -70,6 +48,12 @@ const ProductsC = () => {
 
     fetchData();
   }, []);
+
+  const pageCount = Math.ceil(products.length / itemsPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   const displayItem = async (product, id) => {
     try {

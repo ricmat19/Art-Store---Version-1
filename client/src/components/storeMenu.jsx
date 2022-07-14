@@ -13,37 +13,37 @@ const StoreMenuC = () => {
       try {
         productResponse = await IndexAPI.get(`/products`);
 
-        for (let i = 0; i < productResponse.data.data.products.length; i++) {
-          if (productResponse.data.data.products[i].imagekey !== null) {
-            let imagesResponse = await IndexAPI.get(
-              `/images/${productResponse.data.data.products[i].imagekey}`,
-              {
-                responseType: "arraybuffer",
-              }
-            ).then((response) =>
-              Buffer.from(response.data, "binary").toString("base64")
-            );
+        // for (let i = 0; i < productResponse.data.data.products.length; i++) {
+        //   if (productResponse.data.data.products[i].imagekey !== null) {
+        //     let imagesResponse = await IndexAPI.get(
+        //       `/images/${productResponse.data.data.products[i].imagekey}`,
+        //       {
+        //         responseType: "arraybuffer",
+        //       }
+        //     ).then((response) =>
+        //       Buffer.from(response.data, "binary").toString("base64")
+        //     );
 
-            if (
-              productResponse.data.data.products[i].primary_image &&
-              productResponse.data.data.products[i].product === "print"
-            ) {
-              setTwoDImage(`data:image/png;base64,${imagesResponse}`);
-            }
-            if (
-              productResponse.data.data.products[i].primary_image &&
-              productResponse.data.data.products[i].product === "model"
-            ) {
-              setThreeDImage(`data:image/png;base64,${imagesResponse}`);
-            }
-            if (
-              productResponse.data.data.products[i].primary_image &&
-              productResponse.data.data.products[i].product === "comic"
-            ) {
-              setComicImage(`data:image/png;base64,${imagesResponse}`);
-            }
-          }
-        }
+        //     if (
+        //       productResponse.data.data.products[i].primary_image &&
+        //       productResponse.data.data.products[i].product === "print"
+        //     ) {
+        //       setTwoDImage(`data:image/png;base64,${imagesResponse}`);
+        //     }
+        //     if (
+        //       productResponse.data.data.products[i].primary_image &&
+        //       productResponse.data.data.products[i].product === "model"
+        //     ) {
+        //       setThreeDImage(`data:image/png;base64,${imagesResponse}`);
+        //     }
+        //     if (
+        //       productResponse.data.data.products[i].primary_image &&
+        //       productResponse.data.data.products[i].product === "comic"
+        //     ) {
+        //       setComicImage(`data:image/png;base64,${imagesResponse}`);
+        //     }
+        //   }
+        // }
         setProducts(productResponse.data.data.products);
       } catch (err) {
         console.log(err);
